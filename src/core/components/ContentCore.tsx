@@ -8,12 +8,12 @@ import routes from './../../routes';
 function ContentCore() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-    <Switch>
-      {routes.map((route, i) => (
-        <RouteWithSubRoutesShared key={i} {...route} />
-      ))}
-    </Switch>
-  </Suspense>
+      <Switch>
+        {routes.map((route, i) => (
+          <RouteWithSubRoutesShared key={i} {...route} />
+        ))}
+      </Switch>
+    </Suspense>
   )
 }
 
