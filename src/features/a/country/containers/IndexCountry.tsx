@@ -1,17 +1,29 @@
 import React from 'react'
-import { Link, Switch, useRouteMatch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+
+import { helloSaga } from '../store/effects/entity.effects';
 
 import RouteWithSubRoutesShared from '../../../../shared/components/RouteWithSubRoutesShared';
+import { TableShared } from '../../../../shared/components/prime';
 
-import { ButtonShared } from '../../../../shared/components/prime';
+import { reducer } from '../store/reducers/entity.reducer'
+
+/* import { IAction } from '../../../../shared/utils/action.interface'; */
+
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(helloSaga)
+/* const dispatch = (action: IAction) => store.dispatch(action); */
 
 function IndexCountry({ routes }: any) {
-  let { url } = useRouteMatch();
+
+
   return (
     <div>
       <h2>Countries</h2>
-      <Link to={`${url}/create`}><ButtonShared label="Crear" /></Link>
-      <Link to={`${url}/edit/2`}><ButtonShared label="Editar" /></Link>
+      <TableShared items={store.getState().entities} />
       <Switch>
         {routes.map((route: any, i: number) => (
           <RouteWithSubRoutesShared key={i} {...route} />
