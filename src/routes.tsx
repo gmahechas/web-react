@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 
-
 const IndexDashboard = lazy(() => import('./dashboard/IndexDashboard'));
 const IndexCountry = lazy(() => import('./features/a/country/containers/IndexCountry'));
 const FormCountry = lazy(() => import('./features/a/country/containers/FormCountry'));
