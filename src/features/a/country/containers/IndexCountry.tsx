@@ -9,9 +9,9 @@ function IndexCountry({ routes }: any) {
   let { url } = useRouteMatch();
   return (
     <div>
+      <h2>Countries</h2>
       <Link to={`${url}/create`}><ButtonShared label="Crear" /></Link>
       <Link to={`${url}/edit/2`}><ButtonShared label="Editar" /></Link>
-      <h3>List</h3>
       <Switch>
         {routes.map((route: any, i: number) => (
           <RouteWithSubRoutesShared key={i} {...route} />

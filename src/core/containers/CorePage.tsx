@@ -1,10 +1,8 @@
-import React, { Suspense } from 'react'
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import RouteWithSubRoutesShared from '../../shared/components/RouteWithSubRoutesShared';
 import HeaderCore from '../components/HeaderCore';
-
-import routes from './../../routes';
+import ContentCore from '../components/ContentCore';
 
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';
@@ -14,14 +12,7 @@ function CorePage() {
   return (
     <Router>
       <HeaderCore />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          {routes.map((route, i) => (
-            <RouteWithSubRoutesShared key={i} {...route} />
-          ))}
-        </Switch>
-      </Suspense>
-
+      <ContentCore />
     </Router>
   )
 }
