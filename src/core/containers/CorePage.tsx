@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import RouteWithSubRoutesShared from '../../shared/components/RouteWithSubRoutesShared';
@@ -10,11 +10,14 @@ function CorePage() {
   return (
     <Router>
       <MenuCore />
-      <Switch>
-        {routes.map((route, i) => (
-          <RouteWithSubRoutesShared key={i} {...route} />
-        ))}
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          {routes.map((route, i) => (
+            <RouteWithSubRoutesShared key={i} {...route} />
+          ))}
+        </Switch>
+      </Suspense>
+
     </Router>
   )
 }
