@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import HeaderCore from '../components/HeaderCore';
-import ContentCore from '../components/ContentCore';
+import HeaderCore from 'core/components/HeaderCore';
+import ContentCore from 'core/components/ContentCore';
 
 import 'primereact/resources/themes/nova-light/theme.css';
 import 'primereact/resources/primereact.min.css';

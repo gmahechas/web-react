@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import CorePage from './core/containers/CorePage';
+import CorePage from 'core/containers/CorePage';
 
 ReactDOM.render(
   <React.StrictMode>

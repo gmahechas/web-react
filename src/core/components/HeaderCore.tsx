@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MenuCore from './MenuCore'
+import MenuCore from 'core/components/MenuCore'
 
 function HeaderCore() {
   return (

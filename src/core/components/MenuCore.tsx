@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-import { ButtonShared } from '../../shared/components/prime';
+import { ButtonShared } from 'shared/prime';
 
 function MenuCore() {
   return (

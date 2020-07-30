@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch } from 'react-router-dom';
 
-import RouteWithSubRoutesShared from '../../../../shared/components/RouteWithSubRoutesShared';
+import RouteWithSubRoutesShared from 'shared/components/RouteWithSubRoutesShared';
 
 function IndexCountry({ routes }: any) {
   return (

@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react'
 import { Switch } from 'react-router-dom';
 
-import RouteWithSubRoutesShared from '../../shared/components/RouteWithSubRoutesShared';
+import RouteWithSubRoutesShared from 'shared/components/RouteWithSubRoutesShared';
 
-import routes from './../../routes';
+import routes from 'routes';
 
 function ContentCore() {
   return (
